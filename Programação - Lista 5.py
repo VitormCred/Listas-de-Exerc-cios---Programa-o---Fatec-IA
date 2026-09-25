@@ -98,7 +98,13 @@ def exercicio_09():
             notas1.append(nota1)
             notas2.append(nota2)
         for i in range(0, 6, 1):
-            print(f"Média {i}º aluno {(notas1[i]+notas2[i])/2}")
+            media = (notas1[i]+notas2[i])/2
+            if media > 7:
+                print(f"Aluno nº{i+1}, média: {media} - Aprovado!")
+            elif 3 <= media <= 7:
+                print(f"Aluno nº{i+1}, média: {media} - Exame!")
+            elif media < 3:
+                print(f"Aluno nº{i+1}, média: {media} - Reprovado!")
 
 def exercicio_10():
     soma_id_mulheres = 0
@@ -116,3 +122,25 @@ def exercicio_10():
             soma_id_homens += idade
     print(f"A quantidade de mulheres é de {qtd_homens} e a média de idade é de {(soma_id_homens/qtd_homens):00.2f}!")
     print(f"A quantidade de homens é de {qtd_homens} e a média de idade é de {(soma_id_homens/qtd_homens):00.2f}!")
+
+
+### Exercícios em aula:
+
+def perc_listas_formar_terceira_sem_repet():
+        lista1 = []
+        lista2 = []
+        input1 = ""
+        input2 = ""
+        while input1 != "proxima":
+            input1 = input("Inserir valor na primeira lista: ").strip()
+            if input1 not in lista1 and input1 != "proxima" and input1 != "":
+                lista1.append(input1)
+        while input2 != "finalizar":
+            input2 = input("Inserir valor na segunda lista: ").strip()
+            if input2 not in lista2 and input2 != "finalizar" and input2 != "":
+                lista2.append(input2)
+        for i in range(len(lista2)):
+            if lista2[i] not in lista1:
+                lista1.append(lista2[i])
+        print(lista1)
+        
