@@ -90,16 +90,15 @@ def exercicio_08():
     print(soma)
 
 def exercicio_09():
-    for i in range(1, 7, 1):
-        nota1 = int(input("Favor inserir a primeira nota: "))
-        nota2 = int(input("inserir a segunda nota: "))
-        media = (nota1+nota2)/2
-        if  media <= 3:
-            print("Aluno reprovado!")
-        elif 3 < media <= 7:
-            print("Aluno de exame!")
-        elif media >= 7:
-            print("Aluno aprovado!")
+        notas1 = []
+        notas2 = []
+        for i in range(1, 7, 1):
+            nota1 = int(input(f"Favor inserir a primeira nota do aluno {i}º: "))
+            nota2 = int(input(f"inserir a segunda nota do aluno {i}º: "))
+            notas1.append(nota1)
+            notas2.append(nota2)
+        for i in range(0, 6, 1):
+            print(f"Média {i}º aluno {(notas1[i]+notas2[i])/2}")
 
 def exercicio_10():
     soma_id_mulheres = 0
